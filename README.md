@@ -2,10 +2,6 @@
 # Usage
 
 ```
-docker run -it jsta/glm /bin/bash
-./glm --version
+docker run -it robertladwig/glm-aed2 /bin/bash
 ```
-
-Based on: https://github.com/AquaticEcoDynamics/GLM/blob/master/.travis.yml
-
-For Docker help see: https://ropenscilabs.github.io/r-docker-tutorial/
+Forked from: https://github.com/jsta/GLM_docker
