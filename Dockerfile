@@ -19,7 +19,7 @@ RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
 
 WORKDIR libutil
 
-RUN F90=gfortran-9 make
+RUN F90=gfortran-8 make
 
 WORKDIR ../libplot
 
