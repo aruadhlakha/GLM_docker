@@ -2,6 +2,8 @@
 # Usage
 
 ```
+# get the container
+docker pull hydrobert/glm-aed2
 # to run GLM-AED
 docker run -it robertladwig/glm-aed2 /bin/bash
 # to run it with a modeling setup
