@@ -1,18 +1,12 @@
----
-title: "Docker Minitutorial"
-output: pdf_document
-author: Robert Ladwig
----
+# hydrobert/glm-aed2
+Maintainer: Robert Ladwig
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## Summary
+## About
 
 Creates a container that enables your machine to run **the latest GLM-AED2 version** without downloading or compiling it by yourself. 
 
-The hydrobert/glm-aed2 container (https://hub.docker.com/r/hydrobert/glm-aed2) is based on the jsta/GLM_docker container. Original docker image and code by Joseph Stachelek (https://github.com/jsta/GLM_docker)
+The hydrobert/glm-aed2 container (https://hub.docker.com/r/hydrobert/glm-aed2) is based on the jsta/GLM_docker container. Original docker image and code by Joseph Stachelek (https://github.com/jsta/GLM_docker).
 
 ## Installation
 
