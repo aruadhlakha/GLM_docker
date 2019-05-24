@@ -10,7 +10,7 @@ rm(list = ls())
 library(httr)
 
 # replace local_folder with a path on your machine
-local_folder <- '/Users/robertladwig/Documents/Reports/docker/TestLake'#"<YOURFOLDERPATH>" 
+local_folder <- '/Users/robertladwig/Documents/Reports/docker/TestLake/'#"<YOURFOLDERPATH>" 
 setwd(local_folder)
 
 # creates the folders 'bcs' and 'aed' for the GLM-AED2 simulation
