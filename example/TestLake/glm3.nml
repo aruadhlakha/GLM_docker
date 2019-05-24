@@ -88,7 +88,7 @@
    cloud_mode = 4
    fetch_mode = 0
    subdaily = .false.
-   meteo_fl = "bcs/met_driver.csv"
+   meteo_fl = 'bcs/met_driver.csv'
    wind_factor = 1
    sw_factor = 1.08
    lw_factor = 1
