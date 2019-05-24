@@ -46,13 +46,7 @@
 !-------------------------------------------------------------------------------
 &aed2_models
 
-   models = 'aed2_oxygen',
-	    !'aed2_carbon',
-	    !'aed2_silica',
-	    !'aed2_nitrogen',
-	    !'aed2_phosphorus',
-	    !'aed2_organic_matter',
-	    !'aed2_phytoplankton'
+   models = 'aed2_oxygen'
 /
 
 !###############################################################################
