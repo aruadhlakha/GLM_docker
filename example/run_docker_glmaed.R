@@ -10,10 +10,12 @@ rm(list = ls())
 library(httr)
 
 # replace local_folder with a path on your machine
-local_folder <- "<YOURFOLDERPATH>" 
-cd(local_folder)
+local_folder <- '/Users/robertladwig/Documents/Reports/docker/TestLake'#"<YOURFOLDERPATH>" 
+setwd(local_folder)
+
 # creates the folders 'bcs' and 'aed' for the GLM-AED2 simulation
-system('mkdir bcs aed')
+dir.create('aed')
+dir.create('bcs')
 
 # gets urls to the github data
 path_glm <- "https://raw.githubusercontent.com/robertladwig/GLM_docker/master/example/TestLake/glm3.nml"
