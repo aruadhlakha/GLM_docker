@@ -102,6 +102,7 @@ system(paste('docker exec -t',dockerid,'/bin/bash -c \"cd <yourmodel>; /GLM/glm\
 ```
 
 # Our example:
+You can also find a Rstudio example that downloads all data and runs a simulation under example/run_docker_glmaed.R.
 ```{r, eval = FALSE}
 # Open the docker container
 system('docker run -it -d -v /Users/Documents/Testfolder:/GLM/TestLake hydrobert/glm-aed2 /
