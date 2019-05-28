@@ -8,6 +8,7 @@ rm(list = ls())
 # packaged needed to get the github files, install it via
 # install.packages('httr')
 library(httr)
+library(readr)
 
 # replace local_folder with a path on your machine
 local_folder <- "<YOURFOLDERPATH>" 
