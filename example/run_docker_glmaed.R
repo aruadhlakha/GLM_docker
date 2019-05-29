@@ -8,10 +8,10 @@ rm(list = ls())
 # packaged needed to get the github files, install it via
 # install.packages('httr')
 library(httr)
-library(readr)
+#library(readr)
 
 # replace local_folder with a path on your machine
-local_folder <- "<YOURFOLDERPATH>" 
+local_folder <-  "<YOURFOLDERPATH>" 
 setwd(local_folder)
 
 # creates the folders 'bcs' and 'aed' for the GLM-AED2 simulation
@@ -24,12 +24,15 @@ path_meteo <- "https://raw.githubusercontent.com/robertladwig/GLM_docker/master/
 path_aed <- "https://raw.githubusercontent.com/robertladwig/GLM_docker/master/example/TestLake/aed/aed2.nml"
 
 # saves data to your machine
-glm <- read_tsv(path_glm)
-meteo <- read_csv(path_meteo)
-aed <- read_tsv(path_aed)
-write_tsv(glm, paste0(local_folder,'glm3.nml'), quote= FALSE)
-write_csv(meteo, paste0(local_folder,'bcs/met_driver.csv'))
-write_tsv(aed, paste0(local_folder,'aed/aed2.nml'), quote= FALSE)
+download.file(path_glm, paste0(local_folder,'glm3.nml'))
+download.file(path_meteo, paste0(local_folder,'bcs/met_driver.csv'))
+download.file(path_aed, paste0(local_folder,'aed/aed2.nml'))
+# glm <- read_tsv(path_glm)
+# meteo <- read_csv(path_meteo)
+# aed <- read_tsv(path_aed)
+# readr::write_tsv(glm, paste0(local_folder,'glm3.nml'), quote= FALSE)
+# readr::write_csv(meteo, paste0(local_folder,'bcs/met_driver.csv'))
+# readr::write_tsv(aed, paste0(local_folder,'aed/aed2.nml'), quote= FALSE)
 
 # start docker as background process (detached)
 system(paste0('docker run -it -d -v ',local_folder,':/GLM/TestLake hydrobert/glm-aed2 /bin/bash'))
