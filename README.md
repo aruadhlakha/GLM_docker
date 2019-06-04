@@ -4,7 +4,7 @@ Maintainer: Robert Ladwig
 
 ## About
 
-Creates a container that enables your machine to run **the latest GLM-AED2 version** without downloading or compiling it by yourself. 
+Creates a container that enables your machine to run **the latest GLM-AED2 version** (currently 3.0.0) without downloading or compiling it by yourself. 
 
 The hydrobert/glm-aed2 container (https://hub.docker.com/r/hydrobert/glm-aed2) is based on the jsta/GLM_docker container. Original docker image and code by Joseph Stachelek (https://github.com/jsta/GLM_docker).
 
