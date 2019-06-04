@@ -88,6 +88,7 @@ Delete all finished or stopped containers:
 
 
 ## Docker in R
+**Please also open the run_docker_glmaed.R script to run a docker example in Rstudio, which automatically downloads files for a GLM run.**
 If you want to use it in R (exchange the simulation path with the path to your specific simulation folder):
 ```{r, eval = FALSE}
 # start docker as background process (detached)
@@ -107,7 +108,7 @@ If you want to run above code in Rstudio, modify the last line to:
 system(paste('docker exec -t',dockerid,'/bin/bash -c \"cd <yourmodel>; /GLM/glm\"'))
 ```
 
-# Our example:
+# Our example in a nutshell:
 ```{r, eval = FALSE}
 # Open the docker container
 system('docker run -it -d -v /Users/Documents/Testfolder:/GLM/TestLake hydrobert/glm-aed2 /
