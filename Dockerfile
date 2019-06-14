@@ -27,7 +27,7 @@ RUN make
 
 WORKDIR ../libaed2
 
-RUN F90=ifort make
+RUN F90=gfortran-8 make
 
 WORKDIR ../GLM
 
