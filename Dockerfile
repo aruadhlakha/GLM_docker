@@ -31,4 +31,4 @@ RUN F90=gfortran-8 make
 
 WORKDIR ../GLM
 
-RUN FC=ifort ./build_glm.sh
+RUN F90=ifort ./build_glm.sh
