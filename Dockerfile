@@ -15,7 +15,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
 	git clone https://github.com/AquaticEcoDynamics/libplot && \
 	git clone https://github.com/AquaticEcoDynamics/libutil && \
-	git clone https://github.com/AquaticEcoDynamics/libaed2
+	git clone https://github.com/aruadhlakha/libaed2.git
 
 WORKDIR libutil
 
