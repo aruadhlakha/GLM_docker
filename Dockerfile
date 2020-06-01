@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER "Aryan Adhlakha" rladwig2@wisc.edu # original creator: Joseph Stachelek, stachel2@msu.edu
+MAINTAINER "Aryan Adhlakha" aryan@cs.wisc.edu # original creator: Joseph Stachelek, stachel2@msu.edu
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	gfortran-8 \
