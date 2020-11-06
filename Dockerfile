@@ -17,6 +17,10 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'devtools::install_github("GLEON/GLM3r",ref="GLMv.3.1.0a3")' \
 	&& Rscript -e 'devtools::install_github("USGS-R/glmtools", ref = "ggplot_overhaul")' 
 	
+RUN	mkdir /home/rstudio/glm
+
+WORKDIR /home/rstudio/glm
+
 RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
 	git clone https://github.com/AquaticEcoDynamics/libplot.git && \
 	git clone https://github.com/AquaticEcoDynamics/libutil.git && \
@@ -37,3 +41,32 @@ RUN F90=gfortran-8 make
 WORKDIR ../GLM
 
 RUN FC=gfortran-8 ./build_glm.sh
+
+WORKDIR ..
+WORKDIR ..
+
+RUN	mkdir /home/rstudio/glm-a
+
+WORKDIR /home/rstudio/glm-a
+
+RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
+	git clone https://github.com/AquaticEcoDynamics/libplot.git && \
+	git clone https://github.com/AquaticEcoDynamics/libutil.git && \
+	git clone https://github.com/aruadhlakha/libaed2.git
+
+WORKDIR libutil
+
+RUN F90=gfortran-8 make
+
+WORKDIR ../libplot
+
+RUN make
+
+WORKDIR ../libaed2
+
+RUN F90=gfortran-8 make
+
+WORKDIR ../GLM
+
+RUN FC=gfortran-8 ./build_glm.sh
+
