@@ -54,19 +54,3 @@ RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
 	git clone https://github.com/AquaticEcoDynamics/libutil.git && \
 	git clone https://github.com/aruadhlakha/libaed2.git
 
-WORKDIR libutil
-
-RUN F90=gfortran-8 make
-
-WORKDIR ../libplot
-
-RUN make
-
-WORKDIR ../libaed2
-
-RUN F90=gfortran-8 make
-
-WORKDIR ../GLM
-
-RUN FC=gfortran-8 ./build_glm.sh
-
