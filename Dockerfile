@@ -20,7 +20,7 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
 	git clone https://github.com/AquaticEcoDynamics/libplot.git && \
 	git clone https://github.com/AquaticEcoDynamics/libutil.git && \
-	git clone https://github.com/aruadhlakha/libaed2.git
+	git clone https://github.com/AquaticEcoDynamics/libaed-water.git
 
 WORKDIR libutil
 
@@ -30,7 +30,7 @@ WORKDIR ../libplot
 
 RUN make
 
-WORKDIR ../libaed2
+WORKDIR ../libaed-water
 
 RUN F90=gfortran-8 make
 
