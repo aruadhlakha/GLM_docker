@@ -52,5 +52,23 @@ WORKDIR /home/rstudio/glm-a
 RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
 	git clone https://github.com/AquaticEcoDynamics/libplot.git && \
 	git clone https://github.com/AquaticEcoDynamics/libutil.git && \
-	git clone https://github.com/aruadhlakha/libaed2.git
+	git clone https://github.com/aruadhlakha/libaed-water.git
+
+WORKDIR libutil
+
+RUN F90=gfortran-8 make
+
+WORKDIR ../libplot
+
+RUN make
+
+WORKDIR ../libaed-water
+
+RUN F90=gfortran-8 make
+
+WORKDIR ../GLM
+
+RUN FC=gfortran-8 ./build_glm.sh
+
+
 
