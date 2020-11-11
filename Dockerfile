@@ -21,7 +21,7 @@ RUN	mkdir /home/rstudio/glm
 
 WORKDIR /home/rstudio/glm
 
-RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
+RUN git clone https://github.com/AquaticEcoDynamics/GLM.git && \
 	git clone https://github.com/AquaticEcoDynamics/libplot.git && \
 	git clone https://github.com/AquaticEcoDynamics/libutil.git && \
 	git clone https://github.com/AquaticEcoDynamics/libaed-water.git
