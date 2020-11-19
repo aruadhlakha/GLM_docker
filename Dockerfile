@@ -17,6 +17,8 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'devtools::install_github("GLEON/GLM3r",ref="GLMv.3.1.0a3")' \
 	&& Rscript -e 'devtools::install_github("USGS-R/glmtools", ref = "ggplot_overhaul")' 
 	
+COPY 	configurations /home/rstudio/configurations
+	
 RUN	mkdir /home/rstudio/glm
 
 WORKDIR /home/rstudio/glm
@@ -69,6 +71,8 @@ RUN F90=gfortran-8 make
 WORKDIR ../GLM
 
 RUN FC=gfortran-8 ./build_glm.sh
+
+
 
 
 
