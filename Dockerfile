@@ -16,12 +16,15 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'install.packages("devtools")' \
 	&& Rscript -e 'devtools::install_github("GLEON/GLM3r",ref="GLMv.3.1.0a3")' \
 	&& Rscript -e 'devtools::install_github("USGS-R/glmtools", ref = "ggplot_overhaul")' 
-	
+RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers	
 COPY 	configurations /home/rstudio/configurations
+WORKDIR /home/rstudio/configurations
+RUN 	chmod -R 777 .
 	
 RUN	mkdir /home/rstudio/glm
 
 WORKDIR /home/rstudio/glm
+RUN 	chmod -R 777 .
 
 RUN git clone https://github.com/AquaticEcoDynamics/GLM.git && \
 	git clone https://github.com/AquaticEcoDynamics/libplot.git && \
@@ -50,6 +53,7 @@ WORKDIR ..
 RUN	mkdir /home/rstudio/glm-a
 
 WORKDIR /home/rstudio/glm-a
+RUN 	chmod -R 777 .
 
 RUN git clone https://github.com/AquaticEcoDynamics/GLM && \
 	git clone https://github.com/AquaticEcoDynamics/libplot.git && \
