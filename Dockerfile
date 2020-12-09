@@ -18,6 +18,8 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'devtools::install_github("USGS-R/glmtools", ref = "ggplot_overhaul")' 
 RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers	
 COPY 	configurations /home/rstudio/configurations
+COPY 	Test.R /home/rstudio/test-scripts
+
 WORKDIR /home/rstudio/configurations
 RUN 	chmod -R 777 .
 	
