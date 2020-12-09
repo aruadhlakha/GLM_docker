@@ -16,9 +16,14 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'install.packages("devtools")' \
 	&& Rscript -e 'devtools::install_github("GLEON/GLM3r",ref="GLMv.3.1.0a3")' \
 	&& Rscript -e 'devtools::install_github("USGS-R/glmtools", ref = "ggplot_overhaul")' 
-RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers	
+RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers
+
+RUN 	mkdir /home/rstudio/test-scripts
+COPY 	Test.R /home/rstudio/test-scripts/
+WORKDIR /home/rstudio/test-scripts
+RUN 	chmod -R 777 .
+
 COPY 	configurations /home/rstudio/configurations
-COPY 	Test.R /home/rstudio/test-scripts
 
 WORKDIR /home/rstudio/configurations
 RUN 	chmod -R 777 .
