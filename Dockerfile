@@ -47,7 +47,7 @@ WORKDIR ../libplot
 RUN make
 
 WORKDIR ../libaed-water
-
+RUN 	chmod -R 777 .
 RUN F90=gfortran-8 make
 
 WORKDIR ../GLM
